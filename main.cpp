@@ -5,9 +5,33 @@ using namespace std;
 int main()
 {
 
-    while(true)
+int option;
+
+    switch (option)
     {
-        cout << "Hello, World!" << endl;
+    case 1:
+            //AGREGAR NUEVO
+            cout << "---AGREGAR NUEVO---" << endl;
+
+        break;
+    case 2:
+            //PRESTAMO 
+            cout << "---PRESTAMO---" << endl;
+
+        break;
+    case 3:
+            //DEVOLUCIÓN
+            cout << "---DEVOLUCIÓN---" << endl;
+
+        break;
+    case 4:
+            //BUSQUEDA
+            cout << "---BUSQUEDA---" << endl;
+            
+        break;
+
+    default:
+        break;
     }
 
     return 0;
