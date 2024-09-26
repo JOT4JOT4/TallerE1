@@ -1,34 +1,22 @@
 #pragma once
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class MaterialBibliografico
 {
 private:
-    /* data */
-    string nombre;
-    int isbn;
-    string autor;
-    bool prestado;
+
+	string nombre;
+	int isbn;
+	string autor;
+	bool prestado;
 public:
-    MaterialBibliografico(/* args */);
-        virtual void MostrarInformacion();
-    ~MaterialBibliografico();
-    
+	MaterialBibliografico(string nombre,int isbn,string autor);
+	virtual void MostrarInformacion();
+	string getNombre();
+	~MaterialBibliografico();
+
 };
-
-MaterialBibliografico::MaterialBibliografico(/* args */)
-{
-}
-
-MaterialBibliografico::~MaterialBibliografico()
-{
-}
-
-void MaterialBibliografico::MostrarInformacion()
-{
-}
 
 
