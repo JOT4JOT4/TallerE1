@@ -1,24 +1,21 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "MaterialBibliografico.hpp"
 
 using namespace std;
 
-class Revista
-{
+class Revista: public MaterialBibliografico {
+
 private:
-    /* data */
-    int numeroEdicion;
-    string mesPublicacion;
+
+	int numEdicion;
+	string mesPublic;
+
 public:
-    Revista(/* args */);
-    ~Revista();
+
+	Revista(string nombre,int isbn,string autor,int numEdicion,string mesPublic);
+	void MostrarInformacion() override;
+
+	~Revista();
 };
-
-Revista::Revista(/* args */)
-{
-}
-
-Revista::~Revista()
-{
-}
