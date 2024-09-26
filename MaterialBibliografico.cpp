@@ -15,7 +15,10 @@ void MaterialBibliografico::MostrarInformacion() {
 	std::cout << nombre<<","<<isbn<<","<<autor<<","<<prestado<< std::endl;
 
 }
-MaterialBibliografico::~MaterialBibliografico() {
-	// Destructor, puede estar vacC-o.
+string MaterialBibliografico:: getNombre(){
+    return nombre;
 }
 
+MaterialBibliografico::~MaterialBibliografico() {
+	
+}
