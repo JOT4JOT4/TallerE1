@@ -1,17 +1,22 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "MaterialBibliografico.h"
 
 using namespace std;
 
-class Libro
-{
+class Libro: public MaterialBibliografico {
+
 private:
-    /* data */
-    string fechaPublicacion;
-    string resumen;
+
+	string fechaP;
+	string resumen;
 
 public:
-    Libro(/* args */);
-    ~Libro();
+
+	Libro(string nombre,int isbn,string autor,string fechaP,string resumen);
+	void MostrarInformacion() override;
+
+	~Libro();
+
 };

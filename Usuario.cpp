@@ -1,4 +1,4 @@
-#include "Usuario.hpp"
+#include "Usuario.h"
 #include <iostream>
 
 Usuario::Usuario(string nombre,int id)

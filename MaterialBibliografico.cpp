@@ -1,5 +1,5 @@
 #include <iostream>
-#include "MaterialBibliografico.hpp"
+#include "MaterialBibliografico.h"
 
 using namespace std;
 

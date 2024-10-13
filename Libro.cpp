@@ -1,4 +1,4 @@
-#include "Libro.hpp"
+#include "Libro.h"
 #include <iostream>
 
 Libro::Libro(string nombre,int isbn,string autor,string fechaP,string resumen)

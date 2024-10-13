@@ -1,4 +1,4 @@
-#include "Revista.hpp"
+#include "Revista.h"
 #include <iostream>
 
 Revista::Revista(string nombre,int isbn,string autor,int numEdicion,string mesPublic)
