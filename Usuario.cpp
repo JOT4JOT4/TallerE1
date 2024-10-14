@@ -55,6 +55,12 @@ MaterialBibliografico* Usuario::devolverMaterial(string nombreB) {
 	return nullptr;
 }
 
+string Usuario::getNombre(){
+	return nombre;
+}
+int Usuario::getId(){
+	return id;
+}
 
 Usuario::~Usuario() {
 

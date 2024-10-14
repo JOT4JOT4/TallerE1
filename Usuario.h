@@ -20,5 +20,6 @@ public:
     MaterialBibliografico* devolverMaterial(string nombreB);
     void mostrarMaterialesPrestados();
     string getNombre();
+    int getId();
     ~Usuario();
 };

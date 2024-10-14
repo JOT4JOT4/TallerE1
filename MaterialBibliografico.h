@@ -15,6 +15,9 @@ public:
 	MaterialBibliografico(string nombre,int isbn,string autor);
 	virtual void MostrarInformacion();
 	string getNombre();
+	string getAutor();
+	bool getPrestado();
+	void cambiarEstado();
 	~MaterialBibliografico();
 
 };
