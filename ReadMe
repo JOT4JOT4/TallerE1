@@ -1,0 +1,14 @@
+Integrantes:
+    Juan Pablo Vargas Corral 20.428.612-4 juan.vargas01@alumnos.ucn.cl C1
+    Cristobal Luna  21.006.280-7  cristobal.luna@alumnos.ucn.cl  C1
+
+    g++ -o main.exe main.cpp // codigo para ejecutar el programa en visual studio
+    version de minGW64 6.3.0
+
+    creacion de un libro
+    biblioteca[contMaterial++] = new Libro("mundo", 123, "Mario", "2024-12-1", "Hola mundo");
+
+    creacion de usuarios
+    usuarios[contUs++] = new Usuario("cris1", 1);
+    usuarios[contUs++] = new Usuario("cris2", 2);
+    usuarios[contUs++] = new Usuario("cris3", 3);
