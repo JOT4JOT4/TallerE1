@@ -16,7 +16,7 @@ private:
 public:
 
     Usuario(string nombre,int id);
-    void prestarMaterial(MaterialBibliografico* material);
+    bool prestarMaterial(MaterialBibliografico* material);
     MaterialBibliografico* devolverMaterial(string nombreB);
     void mostrarMaterialesPrestados();
     string getNombre();

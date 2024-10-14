@@ -25,17 +25,18 @@ void Usuario::mostrarMaterialesPrestados() {
 	}
 }
 
-void Usuario::prestarMaterial(MaterialBibliografico* material) {
+bool Usuario::prestarMaterial(MaterialBibliografico* material) {
 
 	for(int i = 0; i < 5; i++) {
 		if(materialesPrestados[i] == nullptr) {
 			materialesPrestados[i] = material;
-			return;
+			return true;
 		}
 
 	}
 
 	std::cout << "El material no se ha agregado dado que tiene todo el cupo de materiales ocupado" << std::endl;
+	return false;
 }
 
 MaterialBibliografico* Usuario::devolverMaterial(string nombreB) {
