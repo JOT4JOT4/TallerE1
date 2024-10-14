@@ -357,7 +357,13 @@ Usuario* DevolverUsuario(Usuario* arrayUsuario[], int contUsuario) {
 
 
 //------------------------------------------------------------------------------------------//
-int AgregarMaterial(MaterialBibliografico* biblioteca[],int cont) {
+int AgregarMaterial(MaterialBibliografico* biblioteca[],int cont,int N) {
+
+    if(cont >= N)
+    {
+        cout << "SE EXCEDIO EL ESPACIO EN BIBLIOTECA" << endl;
+        return -1;
+    }
 
     int opcion;
 
@@ -402,7 +408,8 @@ int AgregarMaterial(MaterialBibliografico* biblioteca[],int cont) {
         cout<<"Ingrese la fecha de publicacion del libro"<<endl;
         cin >> fechaP;
         cout<<"Ingrese un resumen del libro"<<endl;
-        cin >> resumen;
+        getline(cin,resumen);
+        getline(cin,resumen);
         //Libro libro = new MaterialBibliografico(nombre,isbn,autor,fechaP,resumen)
         biblioteca[cont++] = new Libro(nombre,isbn,nombreA,fechaP,resumen);
 
@@ -459,7 +466,7 @@ int opcion = 0;
         switch (opcion)
         {
             case 1:
-                AgregarMaterial(biblioteca,contMaterial);
+                AgregarMaterial(biblioteca,contMaterial,tamano);
                 break;
             case 2:
                 MostrarMaterial(biblioteca,contMaterial);
