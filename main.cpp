@@ -261,8 +261,102 @@ void BuscarMaterial(MaterialBibliografico* array[], int  conMaterial) {
             break;
     }
 }
+//---------------------------------------------------------------------------------------------//
+int PedirODevolverMaterial(MaterialBibliografico* arrayBiblioteca[],int conMaterial,Usuario* arrayUsuarios[], int contUsuario) {
+
+    Usuario* usuario = DevolverUsuario(arrayUsuarios, contUsuario);
+
+    if(usuario == nullptr)
+    {
+        cout << "No se puede, usuario no existente" << endl;
+        return -1;
+    }
+
+    int opcion2;
+    
+    cout << "Que desea hacer." << endl;
+    cout << "1) Pedir Prestado" << " 2) Devolver Prestado" << endl;
+
+    cin>> opcion2;
+
+    switch(opcion2){
+        case 1:
+        //Pedir Prestado
+            cambiarEstadoMaterial(arrayBiblioteca,usuario,conMaterial,true);
+            break;
+        case 2:
+        //Devolver Prestado
+            cambiarEstadoMaterial(arrayBiblioteca,usuario,conMaterial,false);
+            break;
+        default:
+            cout << "Opcion invalida ..." << endl;
+            break;
+    }
 
 
+}
+
+void cambiarEstadoMaterial(MaterialBibliografico* array[], Usuario usuario,int contMaterial, bool pedirDevolver) {
+    string titulo = "";
+    cout << "Ingrese el titulo: ";
+    cin >> titulo;
+    bool flag = false;
+    cout << endl << "-------------" << endl;
+    for(int i=0; i<contMaterial; i++) {
+        if(array[i]->getNombre() == titulo){
+            array[i]->MostrarInformacion();
+            flag = true;
+            //Pedir Prestado Material
+            if(pedirDevolver == true)
+            {
+                if(array[i]->getPrestado == false)
+            {
+                cout << "Prestamo Exitoso" << endl;
+                array[i] ->cambiarEstado();
+                usuario -> prestarMaterial(array[i]);
+            }
+            else{ cout << "Material no se Encuentra Disponible" << endl;}
+            }
+            //Devolver Material Prestado
+            else{
+                if(array[i]->getPrestado == true)
+             {
+                cout << "Devolución Exitosa" << endl;
+                array[i] ->cambiarEstado();
+                usuario -> devolverMaterial(array[i] -> getNombre());
+            }
+            else{ cout << "Material ya se encuentra en biblioteca" << endl}
+}
+            
+        }
+    }
+    if(!flag){
+        cout << "BUSQUEDA SIN RESULTADOS" << endl;
+    }
+    cout << "--------------" << endl;
+}
+
+Usuario* DevolverUsuario(Usuario* arrayUsuario[], int contUsuario) {
+
+    int id;
+    cout << "Ingrese el id del usuario a buscar: ";
+    cin >> id;
+    bool encontrado = false;
+    for(int i=0; i<contUsuario; i++) {
+        if(arrayUsuario[i]->getId() == id) {
+            encontrado = true;
+            return arrayUsuario[i];
+            cout << "-USUARIO ENCONTRADO-" << endl;
+        }
+    }
+    if(!encontrado) {
+        cout << "-USUARIO NO ENCONTRADO-" << endl;
+    }
+    return nullptr;
+}
+
+
+//------------------------------------------------------------------------------------------//
 int AgregarMaterial(MaterialBibliografico* biblioteca[],int cont) {
 
     int opcion;
@@ -374,7 +468,7 @@ int opcion = 0;
                 BuscarMaterial(biblioteca, contMaterial);
                 break;
             case 4:
-
+                PedirODevolverMaterial(biblioteca, contMaterial,usuarios, contUs);
                 break;
             case 5:
                 GestionUsuarios(usuarios, contUs, tamano);
